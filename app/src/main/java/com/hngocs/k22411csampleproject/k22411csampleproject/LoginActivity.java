@@ -1,13 +1,18 @@
 package com.hngocs.k22411csampleproject.k22411csampleproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText edtUserName;
     EditText edtPassword;
     CheckBox chkRememberLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +56,68 @@ public class LoginActivity extends AppCompatActivity {
         if (e_login!=null)
         {
             Intent intent = new Intent (this, MainActivity.class);
+            // đối số thứ nhất là màn hình Login - là this
             startActivity(intent);
         }
         else
         {
             Toast.makeText(this,"Login failed! check your account again!",Toast.LENGTH_LONG).show();
+            // Length short la trung binh duoi 2s, length long la 3-5s, la tat cua so
         }
-        Intent intent=new Intent(this, MainActivity.class);
-        // đối số thứ nhất là màn hình Login - là this
-        startActivity(intent);
+    }
+
+    public void do_exit(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        Resources res=getResources();
+        // tiêu đề
+        builder.setTitle(res.getText(R.string.confirm_exit_title));
+        // nội dung cửa sổ
+        builder.setMessage(res.getText(R.string.confirm_exit_message));
+        // biểu tượng
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+
+        // thiết lập tương tác Yes:
+        builder.setPositiveButton(res.getText(R.string.confirm_exit_yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // System.exit(0);
+                finish();
+            }
+        });
+        builder.setNegativeButton(res.getText(R.string.confirm_exit_no), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog dialog=builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+
+    private boolean doubleBackToExitPressedOnce = false;
+    private static final long DOUBLE_BACK_PRESS_THRESHOLD = 500;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (doubleBackToExitPressedOnce) {
+                finish();
+                return true;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, DOUBLE_BACK_PRESS_THRESHOLD);
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

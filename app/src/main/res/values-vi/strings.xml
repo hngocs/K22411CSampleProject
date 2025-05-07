@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dự án mẫu K22411C</string>
+    <string name="title_login_username">Tên đăng nhập:</string>
+    <string name="title_login_name_hint">Nhập tên đăng nhập...</string>
+    <string name="title_login_password">Mật khẩu:</string>
+    <string name="title_remember_password">Ghi nhớ mật khẩu?</string>
+    <string name="title_login_button_login">Đăng nhập</string>
+    <string name="title_loginlabel">CHÀO MỪNG ĐẾN VỚI GLOVE SHOP!</string>
+    <string name="title_password_hint">Nhập mật khẩu...</string>
+    <string name="confirm_exit_title">Xác nhận thoát</string>
+    <string name="confirm_exit_message">Bạn có chắc chắn muốn thoát không?</string>
+    <string name="confirm_exit_yes">CÓ</string>
+    <string name="confirm_exit_no">KHÔNG</string>
+    <string name="title_employee">Nhân viên</string>
+    <string name="title_customer">Khách hàng</string>
+
+</resources>
