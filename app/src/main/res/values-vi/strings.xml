@@ -14,5 +14,8 @@
     <string name="confirm_exit_no">KHÔNG</string>
     <string name="title_employee">Nhân viên</string>
     <string name="title_customer">Khách hàng</string>
-
+    <string name="login_failed_message">Đăng nhập thất bại! Vui lòng kiểm tra lại tài khoản của bạn.</string>
+    <string name="press_back_again_to_exit">Vui lòng nhấn nút BACK thêm một lần nữa để thoát</string>
+    <string name="title_add_employee">Thêm nhân viên</string>
+    <string name="title_add_employee_title">Thêm nhân viên ngay bây giờ!</string>
 </resources>

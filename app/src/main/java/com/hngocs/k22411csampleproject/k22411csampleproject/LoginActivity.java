@@ -61,7 +61,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this,"Login failed! check your account again!",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.login_failed_message), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,"Login failed! check your account again!",Toast.LENGTH_LONG).show();
             // Length short la trung binh duoi 2s, length long la 3-5s, la tat cua so
         }
     }
@@ -107,7 +108,8 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.press_back_again_to_exit), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
             new Handler().postDelayed(new Runnable() {
                 @Override

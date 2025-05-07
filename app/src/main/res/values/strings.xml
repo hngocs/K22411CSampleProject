@@ -13,4 +13,9 @@
     <string name="confirm_exit_no">NO</string>
     <string name="title_employee">Employee</string>
     <string name="title_customer">Customer</string>
+    <string name="login_failed_message">Login failed! Check your account again!</string>
+    <string name="press_back_again_to_exit">Please click BACK again to exit</string>
+    <string name="title_add_employee">Add Employee</string>
+    <string name="title_add_employee_title">Add Employee now!</string>
+
 </resources>
