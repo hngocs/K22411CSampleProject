@@ -12,7 +12,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00BCD4"
+        android:background="#FBBDD7"
         android:text="@string/title_loginlabel"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -28,7 +28,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEB3B"
+        android:background="#89CCD5"
         android:text="@string/title_login_username"
         android:textSize="24sp" />
 
@@ -44,7 +44,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEB3B"
+        android:background="#89CAD3"
         android:text="@string/title_login_password"
         android:textSize="24sp" />
 

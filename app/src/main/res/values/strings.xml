@@ -17,5 +17,13 @@
     <string name="press_back_again_to_exit">Please click BACK again to exit</string>
     <string name="title_add_employee">Add Employee</string>
     <string name="title_add_employee_title">Add Employee now!</string>
+    <string name="title_healthcare">Healthcare</string>
+    <string name="title_salary">Salary</string>
+    <string name="title_employee_healthcare_title">Employee Healthcare</string>
+    <string name="title_height">Height</string>
+    <string name="title_weight">Weight</string>
+    <string name="title_calculate">Calculate</string>
+    <string name="title_clear">Clear</string>
+    <string name="title_close">Close</string>
 
 </resources>
