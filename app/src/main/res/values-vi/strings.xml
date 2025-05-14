@@ -21,9 +21,13 @@
     <string name="title_healthcare">Chăm sóc sức khỏe</string>
     <string name="title_salary">Lương</string>
     <string name="title_employee_healthcare_title">Chăm sóc sức khỏe nhân viên</string>
-    <string name="title_height">Chiều cao</string>
-    <string name="title_weight">Cân nặng</string>
+    <string name="title_height">Chiều cao (cm)</string>
+    <string name="title_weight">Cân nặng (kg)</string>
     <string name="title_calculate">Tính toán</string>
     <string name="title_clear">Xóa</string>
     <string name="title_close">Đóng</string>
+    <string name="title_slim">Ốm</string>
+    <string name="title_normal">Bình thường</string>
+    <string name="title_fat">Mập</string>
+
 </resources>
