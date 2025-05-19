@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imgCustomer;
     TextView txtCustomer;
+    ImageView imgCategory;
+    TextView txtCategory;
+    ImageView imgProduct;
+    TextView txtProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,25 +59,48 @@ public class MainActivity extends AppCompatActivity {
         imgCustomer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
                 openCustomerManagementActivity();
             }
         });
         txtCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // gọi code mở màn hình quản trị nhân sự
+                // gọi code mở màn hình quản trị KH
                 openCustomerManagementActivity();
             }
         });
+
+        imgProduct.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                openProductManagementActivity();
+            }
+        });
+        txtProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // gọi code mở màn hình quản trị KH
+                openProductManagementActivity();
+            }
+        });
     }
-    void openEmployeeManagementActivity()
+
+    private void openProductManagementActivity() {
+        Intent intent = new Intent (MainActivity.this, ProductManagementActivity.class);
+        // đối số thứ nhất là màn hình Login - là this
+        startActivity(intent);
+    }
+
+    private void openEmployeeManagementActivity()
     {
         Intent intent = new Intent (MainActivity.this, EmployeeManagementActivity.class);
         // đối số thứ nhất là màn hình Login - là this
         startActivity(intent);
     }
 
-    void openCustomerManagementActivity()
+    private void openCustomerManagementActivity()
     {
         Intent intent = new Intent (MainActivity.this, CustomerManagementActivity.class);
         // đối số thứ nhất là màn hình Login - là this
@@ -85,5 +112,10 @@ public class MainActivity extends AppCompatActivity {
         txtEmployee=findViewById(R.id.txtEmployee);
         imgCustomer=findViewById(R.id.imgCustomer);
         txtCustomer=findViewById(R.id.txtCustomer);
+        imgProduct=findViewById(R.id.imgProduct);
+        txtProduct=findViewById(R.id.txtProduct);
+
+
     }
 }
+

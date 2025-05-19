@@ -28,5 +28,8 @@
     <string name="title_slim">Slim</string>
     <string name="title_normal">Normal</string>
     <string name="title_fat">Fat</string>
+    <string name="title_product">Products</string>
+    <string name="title_advanced_products">Advanced Products</string>
+
 
 </resources>

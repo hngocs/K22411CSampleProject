@@ -71,13 +71,10 @@ public class Customer implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
     @NonNull
     @Override
     public String toString() {
-        String info=id+"-"+name+"\n"+email+"\n"+phone;
+        String info = id + "-" + name + "\n" + email + "\n" + phone;
         return info;
     }
-
-
 }

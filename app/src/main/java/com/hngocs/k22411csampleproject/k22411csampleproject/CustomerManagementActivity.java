@@ -1,6 +1,8 @@
 package com.hngocs.k22411csampleproject.k22411csampleproject;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -10,13 +12,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.hngocs.k22411csampleproject.models.Customer;
+import com.hngocs.k22411csampleproject.connectors.CustomerConnector;
+
 import com.hngocs.k22411csampleproject.R;
 
 public class CustomerManagementActivity extends AppCompatActivity {
 
     ListView lvCustomer;
     ArrayAdapter<Customer> adapter;
-    CustomerConnector connecttor;
+    CustomerConnector connector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +34,22 @@ public class CustomerManagementActivity extends AppCompatActivity {
             return insets;
         });
         addViews();
+        addEvent();
     }
+    private void addEvent() {
+        lvCustomer.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int i, long l) {
+                Customer selected=adapter.getItem(i);
+                adapter.remove(selected);
+                return false;
+            }
+        });
+    }
+
     private void addViews() {
         lvCustomer.findViewById(R.id.lvCustomer);
-        adapter=new ArrayAdapter<> (CustomerManagementActivity.this, android.R.layout.get_all_customers());
+        adapter=new ArrayAdapter<> (CustomerManagementActivity.this, android.R.layout.simple_list_item_1);
         lvCustomer.setAdapter(adapter);
     }
 }

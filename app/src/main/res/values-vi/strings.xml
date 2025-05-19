@@ -29,5 +29,7 @@
     <string name="title_slim">Ốm</string>
     <string name="title_normal">Bình thường</string>
     <string name="title_fat">Mập</string>
+    <string name="title_product">San pham</string>
+    <string name="title_advanced_products">San pham Nang cao</string>
 
 </resources>
