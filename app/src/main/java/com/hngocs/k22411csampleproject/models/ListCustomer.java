@@ -21,31 +21,31 @@ public class ListCustomer implements Serializable {
     public void setCustomers(ArrayList<Customer> customers) {
         this.customers = customers;
     }
-    public void addCustomer(Customer c){
+
+    public void addCustomer(Customer c) {
         customers.add(c);
     }
-    public void generate_sample_dataset(){
+
+    public void generate_sample_dataset() {
         Random random = new Random();
-        for (int i=1; i<=100; i++)
-        {
-            int id=i;
+        for (int i = 1; i <= 100; i++) {
+            int id = i;
             String name = "Customer" + i;
             String email = "customer" + i + "@gmail.com";
-            String username = "customer"+1;
+            String username = "customer" + 1;
             String password = "123";
             String phone = "";
-            int provider=random.nextInt(3);
-            if (provider==0)
-                phone="098";
-            else if (provider==1)
-                phone="090";
+            int provider = random.nextInt(3);
+            if (provider == 0)
+                phone = "098";
+            else if (provider == 1)
+                phone = "090";
             else
-                phone="094";
-            for (int p=1;p<=7; p++)
-            {
-                phone+=random.nextInt(10);
+                phone = "094";
+            for (int p = 1; p <= 7; p++) {
+                phone += random.nextInt(10);
             }
-            Customer c = new Customer(id,name,email,phone,username,password);
+            Customer c = new Customer(id, name, email, phone, username, password);
             addCustomer(c);
         }
     }

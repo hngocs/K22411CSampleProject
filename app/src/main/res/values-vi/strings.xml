@@ -31,5 +31,16 @@
     <string name="title_fat">Mập</string>
     <string name="title_product">San pham</string>
     <string name="title_advanced_products">San pham Nang cao</string>
+    <string name="title_new_customer">Khach hang moi</string>
+    <string name="title_broadcast_advertising">Gui quang cao</string>
+    <string name="title_help">Tro giup</string>
+    <string name="title_customer_detail">Chi tiet khach hang</string>
+    <string name="title_customer_id">Ma so KH</string>
+    <string name="title_customer_name">Ten KH</string>
+    <string name="title_customer_email">Email KH</string>
+    <string name="title_customer_phone">So dien thoai KH</string>
+    <string name="title_new">Tao moi</string>
+    <string name="title_save">Luu</string>
+    <string name="title_remove">Loai bo</string>
 
 </resources>
