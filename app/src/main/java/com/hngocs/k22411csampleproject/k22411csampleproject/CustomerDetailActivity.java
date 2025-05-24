@@ -22,13 +22,12 @@ public class CustomerDetailActivity extends AppCompatActivity {
     EditText edt_customer_username;
     EditText edt_customer_password;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_customer_detail);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -36,27 +35,24 @@ public class CustomerDetailActivity extends AppCompatActivity {
         });
 
         addViews();
+        displayInfor();
     }
 
     private void addViews() {
-        EditText edt_customer_id=findViewById(R.id.edt_customer_id);
-        EditText edt_customer_name=findViewById(R.id.edt_customer_name);
-        EditText edt_customer_email=findViewById(R.id.edt_customer_email);
-        EditText edt_customer_phone=findViewById(R.id.edt_customer_phone);
-        EditText edt_customer_username=findViewById(R.id.edt_customer_username);
-        EditText edt_customer_password=findViewById(R.id.edt_customer_password);
-        display_infor();
+        edt_customer_id = findViewById(R.id.edt_customer_id);
+        edt_customer_name = findViewById(R.id.edt_customer_name);
+        edt_customer_email = findViewById(R.id.edt_customer_email);
+        edt_customer_phone = findViewById(R.id.edt_customer_phone);
+        edt_customer_username = findViewById(R.id.edt_customer_username);
+        edt_customer_password = findViewById(R.id.edt_customer_password);
     }
 
-    private void display_infor() {
-        //Lay intent tu ben customer management activity gui qua
-        Intent intent= getIntent();
-        // Lay du lieu Selected Customer tu intent:
-        Customer c=(Customer) intent.getSerializableExtra("SELECTED_CUSTOMER");
-        if (c==null)
-            return;
-        // Hien thi thong tin customer len giao dien
-        edt_customer_id.setText(c.getId()+"");
+    private void displayInfor() {
+        Intent intent = getIntent();
+        Customer c = (Customer) intent.getSerializableExtra("SELECTED_CUSTOMER");
+        if (c == null) return;
+
+        edt_customer_id.setText(String.valueOf(c.getId()));
         edt_customer_name.setText(c.getName());
         edt_customer_email.setText(c.getEmail());
         edt_customer_phone.setText(c.getPhone());

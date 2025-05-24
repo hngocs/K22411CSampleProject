@@ -42,5 +42,16 @@
     <string name="title_new">Tao moi</string>
     <string name="title_save">Luu</string>
     <string name="title_remove">Loai bo</string>
+    <string name="title_search_product">Tìm kiếm sản phẩm</string>
+    <string name="title_new_product">Thêm sản phẩm mới</string>
+    <string name="title_product_id">Mã sản phẩm</string>
+    <string name="title_product_detail">Chi tiết sản phẩm</string>
+    <string name="title_product_name">Tên sản phẩm</string>
+    <string name="title_product_quantity">Số lượng</string>
+    <string name="title_product_price">Giá sản phẩm</string>
+    <string name="title_product_cate_id">Mã danh mục</string>
+    <string name="title_product_image_id">Mã ảnh</string>
+
+
 
 </resources>
