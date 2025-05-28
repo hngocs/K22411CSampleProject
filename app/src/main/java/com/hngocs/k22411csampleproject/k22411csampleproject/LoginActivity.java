@@ -2,6 +2,7 @@ package com.hngocs.k22411csampleproject.k22411csampleproject;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -69,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void do_exit(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-        Resources res=getResources();
+        Resources res = getResources();
         // tiêu đề
         builder.setTitle(res.getText(R.string.confirm_exit_title));
         // nội dung cửa sổ
@@ -91,10 +92,35 @@ public class LoginActivity extends AppCompatActivity {
                 dialog.cancel();
             }
         });
-        AlertDialog dialog=builder.create();
+        AlertDialog dialog = builder.create();
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
     }
+
+        public void saveLoginInformation()
+        {
+            SharedPreferences preferences=getSharedPreferences("LOGIN_PREFERENCE", MODE_PRIVATE);
+            SharedPreferences.Editor editor=preferences.edit();
+            String usr=edtUserName.getText().toString();
+            String pwd=edtPassword.getText().toString();
+            boolean isSave=chkRememberLogin.isChecked();
+            editor.putString("USER_NAME", usr);
+            editor.putString("PASSWORD", pwd);
+            editor.putBoolean("SAVED", isSave);
+            editor.commit();
+        }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveLoginInformation();
+    }
+
+    public void restoreLoginInformation()
+        {
+
+        }
+
 
     private boolean doubleBackToExitPressedOnce = false;
     private static final long DOUBLE_BACK_PRESS_THRESHOLD = 500;
