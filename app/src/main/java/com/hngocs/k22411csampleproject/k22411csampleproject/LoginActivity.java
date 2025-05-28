@@ -116,9 +116,24 @@ public class LoginActivity extends AppCompatActivity {
         saveLoginInformation();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        restoreLoginInformation();
+    }
+
     public void restoreLoginInformation()
         {
-
+            SharedPreferences preferences=getSharedPreferences("LOGIN_PREFERENCE", MODE_PRIVATE);
+            String usr=preferences.getString("USER_NAME","");
+            String pwd=preferences.getString("PASSWORD","");
+            Boolean isSave=preferences.getBoolean("SAVED",false);
+            if(isSave)
+            {
+                edtUserName.setText(usr);
+                edtPassword.setText(pwd);
+                chkRememberLogin.setChecked(isSave);
+            }
         }
 
 
